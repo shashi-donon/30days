@@ -7,9 +7,12 @@
 body{
     background-image: url(background.jpg);
     font-family: sans-serif;
-    
+
 }
+
+
 .container{
+    margin-top: 250px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -25,13 +28,14 @@ body{
     width: 65px;
     margin: 15px;
     border:5px solid black;
+    box-shadow:100px darkgoldenrod;
     /* added transition property */
-    transition: all 0.1s ease ;
+    transition: all 0.2s ease ;
     
 }
 
 .playing{
     transform:scale(1.1);
     border:5px solid rgb(255, 251, 0);
-    
+    box-shadow:0 0 25px rgb(255, 124, 124);
 }

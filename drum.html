@@ -39,6 +39,13 @@
 
 
     <script>
+
+        //last transition is transform waiting for that 
+        function removetransition(e){
+            if(e.propertyName!='transform') return;
+            this.classList.remove('playing');
+        }
+
         window.addEventListener('keydown', (e) => {
             const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
             const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -47,11 +54,17 @@
                 return;
             audio.currentTime = 0;
             audio.play();
-            console.log(key);
             // add one more class to the div of container
             key.classList.add('playing');
             
-        })
+        });
+        //getting the key object
+
+        keys=document.querySelectorAll('.key');
+
+        //calling the function on each key when transition end event is 
+        //called
+        keys.forEach(key=>key.addEventListener('transitionend', removetransition));
     </script>
 </body>
 
